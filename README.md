@@ -1,221 +1,150 @@
-# vikings-2.0
-En este ejercicio tendrás que aplicar los conceptos de programación orientada a objetos y herencia pero esta vez con Java a nuestros amigos vikingos.
+# Vikings 2.0
 
-## Requisitos
+In this exercise, you will apply object-oriented programming and inheritance concepts with Java to our Viking friends.
 
-- Se te asignará el repositorio desde classroom.
+## Requirements
+- You will be assigned a repository from Classroom.
 
-## Entrega
-- Hazte un fork el repositorio a tu entorno local
+## Submission
+1. Fork the repository to your local environment.
+2. Tests, tests, tests!
+3. Have JUnit up and running.
+4. Execute all tests.
+5. Uncomment the tests one by one and continue coding to pass the tests.
+6. Continue doing the same with the test files: Viking, Saxon, and War.
 
-### Tests, test, tests!
-
-Tener JUnit funcionando
-
-
-**Ejecuta todos los tests**
-
-Descomenta uno a uno los test y sigue codificando para que pasen los test.
-
-Continua haciendo lo mismo con los ficheros de test de los archivos: `Viking`, `Saxon` y `War`.
-
-## Ejercicio
-
-![](https://depor.com/resizer/v2HfcHPs2nqwFJ8FrZnfdgezmgA=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/ACIIZ7YQGRCZNAIMMM6RWQWB6U.jpg)
-
-
---------------------------------------------------------------------------------
-
+## Exercise
 
 ### Soldier
+Modify the `Soldier` class and add two methods `attack()` and `receiveDamage()`.
 
-Modifica la clase `Soldier`y añade dos métodos `attack()` y `receiveDamage()`.
+#### Constructor Method
+- Should receive 2 arguments (health & strength)
+- Should set the health property as the 1st argument
+- Should set the strength property as the 2nd argument
 
-#### método `constructor()`
-- debe recibir **2 argumentos** (health & strength)
-- debe recibir la **propiedad `health`** como **1er argumento**
-- debe recibir la **propiedad `strength`** como **2nd argumento**
+#### attack() Method
+- Should be a function
+- Should receive 0 arguments
+- Should return the strength property of the Soldier
 
-#### método `attack()`
-- debe ser una función
-- debe recibir **0 arguments**
-- debe devolver **la propiedad `strength` del `Soldier`**
-
-#### método `receiveDamage()`
-
-- debe ser una función
-- debe recibir **1 argumento** (-*damage*-)
-- debe substraer el daño recibido de la propiedad `health`
-- **no debe retornar** nada
-
-
---------------------------------------------------------------------------------
-
+#### receiveDamage() Method
+- Should be a function
+- Should receive 1 argument (damage)
+- Should subtract the received damage from the health property
+- Should not return anything
 
 ### Viking
+A Viking is a Soldier with an additional property, their name. Also, the `receiveDamage()` method is implemented differently and it has a new method: `battleCry()`.
 
-Un `Viking` es un `Soldier` con una propiedad adicional, su nombre (`name`). Además tiene implementado el método `receiveDamage()` de manera distinta y tiene un nuevo método: `battleCry()`.
+Modify the Viking class constructor to inherit from the Soldier class, reimplement the `receiveDamage()` method inside the Viking class, and add the new method `battleCry()`.
 
-Modifica el constructor de la clase `Viking` para que herede de la clase `Soldier`, reimplementa el método `receiveDamage()` dentro del `Viking`, y añade el nuevo método `battleCry()`.
+#### Inheritance
+- Viking should extend the Soldier class
 
-#### herencia
-- `Viking` debe extender de la clase  `Soldier`
+#### Constructor Method
+- Should receive 3 arguments (name, health & strength)
+- Should set the name property as the 1st argument
+- Should set the health property as the 2nd argument
+- Should set the strength property as the 3rd argument
 
-#### `constructor()`
-- debe recibir **3 argumentos** (name, health & strength)
-- debe recibir la **propiedad `name`** como **1er argumento**
-- debe recibir la **propiedad `health`** como **2nd argumento**
-- debe recibir la **propiedad `strength`** como **3er argumento**
-- debe recibir la **propiedad `msg`** como **4to argumento**
+#### attack() Method
+- Inherited from Soldier, no need to reimplement.
+- Should be a function
+- Should receive 0 arguments
+- Should return the strength property of the Viking
 
-#### método `attack()`
+#### receiveDamage() Method
+- Needs reimplementation for Viking as the Viking version returns different values.
+- Should be a function
+- Should receive 1 argument (damage)
+- Should subtract the received damage from the health property
+- Should not return anything
+- If the Viking is still alive, should set the message to "NAME has received DAMAGE points of damage"
+- If the Viking dies, should set the message to "NAME has died in act of combat"
 
-(Se **hereda** de `Soldier`, no necesita reimplementación.)
-- debe ser una función
-- debe recibir **0 arguments**
-- debe devolver **la propiedad `strength` del `Viking`**
-
-#### método `receiveDamage()`
-
-(Este método necesita ser **reimplementado** para `Viking` porque la versión  `Viking` devuelve valores diferentes.)
-
-- debe ser una función
-- debe recibir **1 argumento** (-*damage*-)
-- debe substraer el daño recibido de la propiedad `health`
-- **no debe retornar** nada
-- **si el `Viking` todavía está vivo**, debería asignar a msg **"NAME has received DAMAGE points of damage"**
-- **si el `Viking` muere**, debería asignar a msg **"NAME has died in act of combat"**
-
-#### método `battleCry()`
-
-[Puedes informarte sobre gritos de guerra, aquí](http://www.artofmanliness.com/2015/06/08/battle-cries/).
-
-- debe ser una función
-- debe recibir **0 argumentos**
-- debe devolver **"Odin Owns You All!"**
-
-
---------------------------------------------------------------------------------
-
+#### battleCry() Method
+- Should be a function
+- Should receive 0 arguments
+- Should return "Odin Owns You All!"
 
 ### Saxon
+A Saxon is a weaker version of a Soldier. Unlike a Viking, the Saxon has no name. Their `receiveDamage()` method is also different from the Soldier version.
 
-Un `Saxon` es una versión más débil de un `Soldier`. Al contrario de un `Viking`, el `Saxon` no tiene nombre. Su método `receiveDamage()` también es diferente de la versión de `Soldier`.
+Modify the Saxon constructor to extend Soldier and reimplement the `receiveDamage()` method.
 
-Modifica el constructor de `Saxon`, hazlo que extienda de `Soldier` y reimplementa el método `receiveDamage()`.
+#### Inheritance
+- Saxon should extend the Soldier class
 
-#### herencia
-- `Saxon` debe extender de `Soldier`
+#### Constructor Method
+- Should receive 2 arguments (health & strength)
+- Should set the health property as the 1st argument
+- Should set the strength property as the 2nd argument
 
-#### método `constructor()`
-- debe recibir **2 argumentos** (health & strength)
-- debe recibir la **propiedad `health`** como **1er argumento**
-- debe recibir la **propiedad `strength`** como **2nd argumento**
-- - debe recibir la **propiedad `msg`** como **3er argumento**
-#### método `attack()`
-(Este método se **hereda** de `Soldier`, no es necesario reimplementarlo)
+#### attack() Method
+- Inherited from Soldier, no need to reimplement.
+- Should be a function
+- Should receive 0 arguments
+- Should return the strength property of the Soldier
 
-- debe ser una función
-- debe recibir **0 arguments**
-- debe devolver **la propiedad `strength` del `Soldier`**
-
-
-#### `receiveDamage()` method
-
-
-- should be a function
-- should receive **1 argument** (the damage)
-- should remove the received damage from the `health` property
-
-#### método `receiveDamage()`
-
-(Este método necesita ser **reimplementado** porque la versión `Saxon` necesita devolver valores diferentes.)
-
-- debe ser una función
-- debe recibir **1 argumento** (-*damage*-)
-- debe substraer el daño recibido de la propiedad `health`
-- **si el Saxon está todavía vivo**, debería asignar a msg _**"A Saxon has received DAMAGE points of damage"**_
-- **si el Saxon muere**, debería asignar a msg _**"A Saxon has died in combat"**_
-
---------------------------------------------------------------------------------
-
+#### receiveDamage() Method
+- Needs reimplementation for Saxon as the Saxon version returns different values.
+- Should be a function
+- Should receive 1 argument (damage)
+- Should subtract the received damage from the health property
+- If the Saxon is still alive, should set the message to "A Saxon has received DAMAGE points of damage"
+- If the Saxon dies, should set the message to "A Saxon has died in combat"
 
 ### (BONUS) War
+Now let's get into the thick of it: WAR. The War class should facilitate a battle between the Viking army and the Saxon army.
 
-Ahora vamos al lío: la GUERRA. la clase `War` debe servir para montar una batalla entre el ejército de `Viking` y el ejército de `Saxon`.
-
-Modifica la clase `War` y añade estos 5 métodos:
+Modify the War class and add these 5 methods:
 - `addViking()`
 - `addSaxon()`
 - `vikingAttack()`
 - `saxonAttack()`
 - `showStatus()`
 
-#### el método `constructor()`
+#### Constructor Method
+- When War is created, both armies should be empty. Soldiers will be added to the armies later.
+- Should receive 0 arguments
+- Should assign an empty array (List) to the `vikingArmy` property
+- Should assign an empty array (List) to the `saxonArmy` property
 
-Cuando se cree `War`, los ejércitos (*armies*) deben estar vacíos. Los soldados se añadirán a los ejercitos con posterioridad
+#### addViking() Method
+- Adds 1 Viking to the `vikingArmy`. If you want an army of 10 Vikings, you will need to call the method 10 times.
+- Should be a function
+- Should receive 1 argument (a Viking object)
+- Should add the received Viking to the army
+- Should not return anything
 
-- debe recibir **0 argumentos**
-- debe asignar un array (List) vacío a la **propiedad `vikingArmy`**
-- debe asignar un array (List) vacío a la **propiedad `saxonArmy`**
+#### addSaxon() Method
+- The Saxon version of `addViking()`.
+- Should be a function
+- Should receive 1 argument (a Saxon object)
+- Should add the received Saxon to the army
+- Should not return anything
 
-#### método `addViking()`
+#### vikingAttack() Method
+- Invokes the `receiveDamage()` method of a randomly chosen Saxon with damage equal to the strength of a randomly chosen Viking. Only one attack is performed, and the Saxon does not counterattack.
+- Should be a function
+- Should receive 0 arguments
+- Should make `receiveDamage()` of Saxon equal to the strength of a Viking
+- Should remove dead Saxons from the army
+- Should return the result of calling `receiveDamage()` of Saxon with the strength of Viking
 
-Añade 1 `Viking` al `vikingArmy`. Si quieres un ejercito de 10 `Viking`, necesitarás llamar al método 10 veces.
+#### saxonAttack() Method
+- The Saxon version of `vikingAttack()`. A Viking receives damage equal to the strength of a Saxon.
+- Should be a function
+- Should receive 0 arguments
+- Should make `receiveDamage()` of Viking equal to the strength of a Saxon
+- Should remove dead Vikings from the army
+- Should return the result of calling `receiveDamage()` of Viking with the strength of Saxon
 
-- debe ser una función
-- debe recibir **1 argumento** (un objeto `Viking`)
-- debe añadir el `Viking` recibido al ejército
-- **no devuelve nada**
-
-#### el método `addSaxon()`
-
-Es la versión `Saxon` de `addViking()`.
-
-- debe ser una función
-- debe recibir **1 argumento** (un objeto `Saxon`)
-- debe añadir el `Saxon` recibido al ejército
-- **no devuelve nada**
-
-#### el método `vikingAttack()`
-
-Se invoca el método `receiveDamage()` del `Saxon` (elegido al azar) con un daño igual a la `strength` de un `Viking` (también elegido al azar). Sólo debe realizar un ataque y el `Saxon` no debe contraatacar.
-
-- debe ser una función
-- debe recibir **0 argumentos**
-- debe hacer que `receiveDamage()` de `Saxon` sea igual a `strength` de un `Viking`
-- debe eliminar los saxones muertos del ejército.
-- debe retornar el **resultado de llamar a `receiveDamage()` de `Saxon`** con `strength` de `Viking`
-
-#### el método `saxonAttack()`
-
-La version `Saxon` de `vikingAttack()`. Un `Viking` recibe daño igual a  `strength` de un `Saxon`.
-
-- debe ser una función
-- debe recibir **0 argumentos**
-- debe hacer que `receiveDamage()` de `Viking` sea igual a `strength` de un `Saxon`
-- debe eliminar los vikingos muertos del ejército.
-- debe retornar el **resultado de llamar a `receiveDamage()` de `Viking`** con `strength` de `Saxon`
-
-
-#### método `showStatus()`
-
-Devuelve el estado actual de la guerra (`War`) basado en el tamaño de los ejércitos.
-
-- debe ser una función
-- debe recibir **0 arguments**
-- **Si el array de `Saxon` está vacío**, devolverá _**"Vikings have won the war of the century!"**_
-- **Si el array de `Viking` está vacío**, devolverá _**"Saxons have fought for their lives and survive another day..."**_
-- **Si hay al menos 1 `Viking` y 1 `Saxon`**, devolverá _**"Vikings and Saxons are still in the thick of battle."**_
-
-
---------------------------------------------------------------------------------
-
-
-💪
-# vikings-2.0
-# vikings-2.0
-# vikings-2.0
-# vikins-2.0
-# vikings-2.0
-# vikins-2.0
+#### showStatus() Method
+- Returns the current state of the War based on the size of the armies.
+- Should be a function
+- Should receive 0 arguments
+- If the Saxon array is empty, return "Vikings have won the war of the century!"
+- If the Viking array is empty, return "Saxons have fought for their lives and survive another day..."
+- If there is at least 1 Viking and 1 Saxon, return "Vikings and Saxons are still in the thick of battle."
