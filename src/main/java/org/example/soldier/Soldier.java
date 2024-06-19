@@ -28,7 +28,6 @@ public class Soldier {
 
     public void receiveDamage(int damage) {
         this.health -= damage;
-    }
-    
+    } 
 
 }
